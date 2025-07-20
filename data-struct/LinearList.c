@@ -162,6 +162,40 @@ int getValue(SeqList *L, Position pos)
     return L->element[pos];
 }
 
+// 辅助函数 display
+void display(SeqList *L)
+{
+    for(int i=0; i<L->length;i++)
+    {
+        printf("%d\n", L->element[i]);
+    }
+}
+
+void swap(ELEMType *x, ELEMType *y)
+{
+    ELEMType temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+// reverse 线性表
+int reverse(SeqList *L)
+{
+    int i;
+    int length = L->length;
+    if(isEmpty(L)) {
+        printf("当前线性表为空，无需逆转");
+        return FALSE;
+    }
+    for(i = 0; i < length/2; i++)
+    {
+        swap(&(L->element[i]), &(L->element[length - i - 1]));
+    }
+    return TRUE;
+}
+
+
 int main()
 {
     LinearList list;
@@ -174,10 +208,10 @@ int main()
     removeList(&list, 0);
     setValue(&list, 0, 100);
     printf("%d\n", getValue(&list, 0));
-    for(int i=0; i<list.length;i++)
-    {
-        printf("%d\n", list.element[i]);
-    }
+    display(&list);
+    reverse(&list);
+    printf("********reverse*********\n");
+    display(&list);
     return 0;
 }
 
