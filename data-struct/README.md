@@ -13,3 +13,15 @@ ADT LinearList {
         int getValue(LinearList *L, Position pos, ELEMType *x); // 获取线性表中指定位置的元素值
         Position find(LinearList *L, ELEMType x); // 返回元素x在表中第一次出现的位置
 }
+
+ADT LinkList {
+    data part:
+        ELEMType data;
+        struct node *next;
+    operation part:
+        int initList(LinkList *head);
+        int clear(LinkList *head);
+        int isEmpty(LinkList *head);
+        int length(LinkList *head);
+        
+}

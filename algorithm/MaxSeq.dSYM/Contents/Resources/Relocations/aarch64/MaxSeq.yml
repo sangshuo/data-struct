@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/yu.feng/Documents/workspace/data-struct/algorithm/MaxSeq'
+relocations:     []
+...
